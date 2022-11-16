@@ -15,7 +15,8 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup
+
 from requiembot import __version__
 
 setup(name="RequiemBot",

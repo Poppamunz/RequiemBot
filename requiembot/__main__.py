@@ -16,14 +16,14 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import os
-from . import parser
+from typing import Literal, Optional
 
 import discord
 from discord import app_commands
 from discord.ext import commands
 from dotenv import load_dotenv
-from typing import Optional, Literal
-from . import __version__
+
+from . import __version__, parser
 
 load_dotenv()
 
