@@ -22,6 +22,7 @@ import discord
 from discord import app_commands
 from discord.ext import commands
 from dotenv import load_dotenv
+from traceback import format_exception
 
 from . import __version__, parser
 
@@ -85,6 +86,13 @@ async def roll(interaction: discord.Interaction, roll: str, secret: bool = False
     except (parser.ParseError, ZeroDivisionError, ValueError) as e:
         response += "\n**Error:** " + str(e)
         secret = True
+    except Exception as e:
+        response += "\n**Uncaught Error:**"
+        response += "\nThis isn't your fault. Please notify this bot's creator or open an issue on GitHub. "
+        response += "Include what you rolled, and this info:\n```\n"
+        for i in format_exception(e):
+            response += i
+        response += "```"
     else:
         for val, string in rolls:
             response += f"\n{string} = **{val}**"
