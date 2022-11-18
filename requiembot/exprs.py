@@ -106,6 +106,8 @@ class DiceExpr:
         return sum(die.value for die in self.kept_dice), "[" + ", ".join(str(die) for die in self.dice) + "]"
 
     def keep(self, count, highest=True):
+        if count is None:
+            count = 1
         if count >= len(self.kept_dice):
             return
         for i in range(len(self.kept_dice) - count):
