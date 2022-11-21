@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "RequiemBot"
+dynamic = ["version"]
+authors = [
+  { name="Michael Munzer", email="michael.munzer@rutgers.edu" },
+]
+description = "A simple tabletop RPG dice bot for Discord"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)",
+    "Operating System :: OS Independent",
+    "Intended Audience :: End Users/Desktop",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Games/Entertainment :: Role-Playing",
+    "Topic :: Communications :: Chat"
+]
+
+[tool.hatch.version]
+path = "requiembot/__init__.py"
+
+[project.urls]
+"Homepage" = "https://github.com/michaelmunzer/RequiemBot"
