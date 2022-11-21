@@ -89,12 +89,12 @@ class DiceExpr:
         self.size = size
         self.mods = mods
         self.dice = []
-        self.kept_dice = []
 
     def evaluate(self):
+        self.dice = []
+
         for i in range(self.count):
             self.dice.append(self.roll())
-            self.kept_dice.append(self.dice[-1])
         for i in self.mods:
             if i[0] == "k":
                 self.keep(i[1])
@@ -103,18 +103,18 @@ class DiceExpr:
             elif i[0] == "!":
                 self.explode(i[1])
 
-        return sum(die.value for die in self.kept_dice), "[" + ", ".join(str(die) for die in self.dice) + "]"
+        return sum(die.value for die in self.dice if not die.dropped), "[" + ", ".join(str(die) for die in self.dice) + "]"
 
     def keep(self, count, highest=True):
         if count is None:
             count = 1
-        if count >= len(self.kept_dice):
+        if count >= sum((not die.dropped) for die in self.dice):
             return
-        for i in range(len(self.kept_dice) - count):
-            self.kept_dice.remove(min(self.kept_dice) if highest else max(self.kept_dice))
-        for i in self.dice:
-            if not any(i is j for j in self.kept_dice):
-                i.dropped = True
+        for i in range(len(list(die for die in self.dice if not die.dropped)) - count):
+            if highest:
+                min(d for d in self.dice if not d.dropped).dropped = True
+            else:
+                max(d for d in self.dice if not d.dropped).dropped = True
 
     def explode(self, min):
         if min is None:
@@ -123,6 +123,9 @@ class DiceExpr:
         i = 0
         counter = 10
         while i < len(self.dice):
+            if self.dice[i].dropped:
+                i += 1
+                continue
             if not self.dice[i].exploded:
                 counter = 10
             if self.dice[i].value >= min and counter > 0:
