@@ -23,7 +23,7 @@ Once I've found somewhere to host RequiemBot, a link to invite it to your Discor
 - `4dF` Fudge/FATE dice (whose results range from -1 to 1)
 - Roll modifiers:
   - `4d6k3` Roll four six-sided dice and keep the highest three, like a 5E stat.
-  - `2d20kl1` Roll two six-sided dice and keep the lowest.
+  - `2d20kl1` Roll two twenty-sided dice and keep the lowest.
   - (If no number is specified after `k` or `kl`, the default is 1.)
-  - `2d6!5` If any dice roll 5 or higher, then roll an additional die and add to the total. Useful for Savage Worlds or Open d6.
+  - `2d6!5` If any dice roll 5 or higher, then roll an additional die and add to the total for each one, aka "exploding." Useful for Savage Worlds or Open D6.
   - (If no number is specified after `!`, the default is the highest possible value on the die.)
