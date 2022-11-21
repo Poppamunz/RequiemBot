@@ -26,7 +26,13 @@ setup(name="RequiemBot",
       packages=find_packages(),
       requires=["discord.py", "python_dotenv"],
       classifiers=[
-          "Private :: Do Not Upload",
+          "Development Status :: 4 - Beta",
           "License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)",
-          "Operating System :: OS Independent"
+          "Operating System :: OS Independent",
+          "Intended Audience :: End Users/Desktop",
+          "Natural Language :: English",
+          "Programming Language :: Python :: 3",
+          "Programming Language :: Python :: 3.10",
+          "Topic :: Games/Entertainment :: Role-Playing",
+          "Topic :: Communications :: Chat"
       ])
