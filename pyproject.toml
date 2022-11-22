@@ -8,7 +8,7 @@ dynamic = ["version"]
 authors = [
   { name="Michael Munzer", email="michael.munzer@rutgers.edu" },
 ]
-description = "A simple tabletop RPG dice bot for Discord"
+description = "A simple tabletop RPG dice bot for Discord."
 readme = "README.md"
 requires-python = ">=3.10"
 classifiers = [
@@ -20,7 +20,8 @@ classifiers = [
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",
     "Topic :: Games/Entertainment :: Role-Playing",
-    "Topic :: Communications :: Chat"
+    "Topic :: Communications :: Chat",
+    "Topic :: Games/Entertainment :: Board Games"
 ]
 
 [tool.hatch.version]
