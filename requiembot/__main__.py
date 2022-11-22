@@ -26,7 +26,11 @@ from traceback import format_exception
 
 from . import __version__, parser
 
-load_dotenv()
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
 
 if not (TOKEN := os.getenv("TOKEN")):
     print("Error: Bot token not found in environment variables or .env")
