@@ -60,10 +60,10 @@ async def help(interaction: discord.Interaction):
     embed.add_field(name="Disadvantage", value="`2d20kl1 + 3`", inline=True)
     embed.add_field(name="Wild Die", value="`1d6!`", inline=True)
     if bot.user.avatar:
-        embed.set_footer(text=f"Requiem v{__version__}",
+        embed.set_footer(text=f"RequiemBot v{__version__}",
                          icon_url=bot.user.avatar.url)
     else:
-        embed.set_footer(text=f"Requiem v{__version__}")
+        embed.set_footer(text=f"RequiemBot v{__version__}")
     await interaction.response.send_message(embed=embed)
 
 
