@@ -3,13 +3,12 @@ This is a Discord bot for rolling dice (such as in tabletop RPGs) and optionally
 
 ## Usage
 ### Invite to your server:
-Once I've found somewhere to host RequiemBot, a link to invite it to your Discord server will be here.
+I am currently testing the bot with a small group of people, and will make an invite link publicly available when I've received enough feedback.
 ### Run locally:
-1. Clone this repository using Git, and cd into the resulting directory
-2. Create a copy of `.env-example` and rename it to `.env`
-3. In `.env`, replace `[YOUR TOKEN HERE]` with your Discord bot token
-4. Run `pip install -e .` which will install this project as a PyPI package
-5. Run `python -m requiembot`
+(Requires Python ≥ 3.10)
+1. Install from PyPI using `pip install requiembot`
+2. Set environment variable `TOKEN` to your Discord bot token
+3. Run `python -m requiembot`
 
 ## Features
 ### Commands
@@ -27,3 +26,20 @@ Once I've found somewhere to host RequiemBot, a link to invite it to your Discor
   - (If no number is specified after `k` or `kl`, the default is 1.)
   - `2d6!5` If any dice roll 5 or higher, then roll an additional die and add to the total for each one, aka "exploding." Useful for Savage Worlds or Open D6.
   - (If no number is specified after `!`, the default is the highest possible value on the die.)
+
+## Planned Additions
+(in no particular order)
+- Optional "compact" rolls shortened to one line
+- Count successes/failures, like World of Darkness
+- Reroll on nat 1 (or some other number)
+- Highest/lowest of multiple different expressions
+- Proper code comments/documentation
+
+## Copyright Notice
+Copyright (C) 2022 Michael Munzer
+
+RequiemBot is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+RequiemBot is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License along with this program.  If not, see <https://www.gnu.org/licenses/>.
