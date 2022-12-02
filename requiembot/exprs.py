@@ -100,17 +100,24 @@ class DiceExpr:
                 self.keep(i[1])
             elif i[0] == "kl":
                 self.keep(i[1], False)
+            elif i[0] == "dh":
+                self.drop(i[1], False)
+            elif i[0] == "d":
+                self.drop(i[1])
             elif i[0] == "!":
                 self.explode(i[1])
 
         return sum(die.value for die in self.dice if not die.dropped), "[" + ", ".join(str(die) for die in self.dice) + "]"
 
-    def keep(self, count, highest=True):
+    def keep(self, count, lowest=True):
+        self.drop(len(list(die for die in self.dice if not die.dropped)) - count, lowest)
+
+    def drop(self, count, highest=True):
         if count is None:
             count = 1
         if count >= sum((not die.dropped) for die in self.dice):
             return
-        for i in range(len(list(die for die in self.dice if not die.dropped)) - count):
+        for i in range(count):
             if highest:
                 min(d for d in self.dice if not d.dropped).dropped = True
             else:

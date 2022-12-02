@@ -32,7 +32,7 @@ def parse(expr: str) -> Expr:
     term →      factor (("+" | "-") factor)*;
     factor →    dice (("*" | "/") dice)*;
     dice →      primary ("d" ("f"|primary) dicemod*)?;
-    dicemod →   ("kl"|"k"|"!") primary?;
+    dicemod →   ("kl"|"k"|"d"|"dh"|"!") primary?;
     primary →   ("-"? INTEGER) | "(" exp ")";
     """
     tokens = lexer.tokenize(expr)
@@ -103,7 +103,9 @@ def parse(expr: str) -> Expr:
 
             mods = []
 
-            while match(Token.KEEP_HIGHEST, Token.KEEP_LOWEST, Token.EXPLODE):
+            while match(Token.KEEP_HIGHEST, Token.KEEP_LOWEST,
+                        Token.DROP_HIGHEST, Token.DROP_LOWEST,
+                        Token.EXPLODE):
                 if check(Token.INTEGER):
                     mods.append((previous()[1], int(peek()[1])))
                     advance()

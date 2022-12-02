@@ -23,7 +23,9 @@ I am currently testing the bot with a small group of people, and will make an in
 - Roll modifiers:
   - `4d6k3` Roll four six-sided dice and keep the highest three, like a 5E stat.
   - `2d20kl1` Roll two twenty-sided dice and keep the lowest.
-  - (If no number is specified after `k` or `kl`, the default is 1.)
+  - `3d6d2` Roll three six-sided dice, drop the lowest two.
+  - `3d6dh2` Roll three six-sided dice, drop the highest two. 
+  - (If no number is specified after any of the above, the default is 1.)
   - `2d6!5` If any dice roll 5 or higher, then roll an additional die and add to the total for each one, aka "exploding." Useful for Savage Worlds or Open D6.
   - (If no number is specified after `!`, the default is the highest possible value on the die.)
 

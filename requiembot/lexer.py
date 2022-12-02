@@ -21,6 +21,7 @@ from enum import Enum, auto
 
 # define token types
 class Token(Enum):
+    # math operations and dice symbol
     INTEGER = auto()
     PLUS = auto()
     MINUS = auto()
@@ -28,12 +29,16 @@ class Token(Enum):
     SLASH = auto()
     POWER = auto()
     DICE = auto()
+    FUDGE = auto()
+    # dice modifiers
     KEEP_HIGHEST = auto()
     KEEP_LOWEST = auto()
-    EXPLODE = auto()  # dice modifiers such as k, kl, !, etc
+    DROP_HIGHEST = auto()
+    DROP_LOWEST = DICE  # both are "d"
+    EXPLODE = auto()
+    # organization
     LPAREN = auto()
     RPAREN = auto()
-    FUDGE = auto()
     EOS = auto()
 
 
@@ -41,6 +46,7 @@ exprs = [
     (r"\s+", None),
     (r"(?i)kl", Token.KEEP_LOWEST),
     (r"(?i)k", Token.KEEP_HIGHEST),
+    (r"(?i)dh", Token.DROP_HIGHEST),
     (r"!", Token.EXPLODE),
     (r"(?i)f", Token.FUDGE),
     (r"(?i)d", Token.DICE),
