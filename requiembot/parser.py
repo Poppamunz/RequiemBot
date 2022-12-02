@@ -31,8 +31,8 @@ def parse(expr: str) -> Expr:
     exp →       term;
     term →      factor (("+" | "-") factor)*;
     factor →    dice (("*" | "/") dice)*;
-    dice →      primary ("d" ("f"|primary) dicemod*)?;
-    dicemod →   ("kl"|"k"|"d"|"dh"|"!") primary?;
+    dice →      primary | (INTEGER? "d" ("f"|INTEGER) dicemod*);
+    dicemod →   ("kl"|"k"|"d"|"dh"|"!") INTEGER?;
     primary →   ("-"? INTEGER) | "(" exp ")";
     """
     tokens = lexer.tokenize(expr)
