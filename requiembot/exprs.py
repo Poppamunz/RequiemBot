@@ -115,8 +115,11 @@ class DiceExpr:
     def drop(self, count, highest=True):
         if count is None:
             count = 1
-        if count >= sum((not die.dropped) for die in self.dice):
+        if count < 1:
             return
+        droppable = sum((not die.dropped) for die in self.dice)
+        if count >= droppable:
+            count = droppable
         for i in range(count):
             if highest:
                 min(d for d in self.dice if not d.dropped).dropped = True
