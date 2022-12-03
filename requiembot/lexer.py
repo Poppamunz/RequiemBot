@@ -34,12 +34,12 @@ class Token(Enum):
     KEEP_HIGHEST = auto()
     KEEP_LOWEST = auto()
     DROP_HIGHEST = auto()
-    DROP_LOWEST = DICE  # both are "d"
     EXPLODE = auto()
     # organization
     LPAREN = auto()
     RPAREN = auto()
     EOS = auto()
+    DROP_LOWEST = DICE  # both are "d"
 
 
 exprs = [
