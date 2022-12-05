@@ -71,16 +71,19 @@ async def help(interaction: discord.Interaction):
 @app_commands.describe(
     roll="Expression containing dice and/or math.",
     secret="If set to True, the roll and its result will only be visible to you. Default is False.",
-    repeat="Amount of times to repeat the roll. Default is 1."
+    repeat="Amount of times to repeat the roll. Default is 1.",
+    compact="If set to True, the response will be shortened by removing the details of each roll."
 )
-async def roll(interaction: discord.Interaction, roll: str, secret: bool = False, repeat: int = 1):
+async def roll(interaction: discord.Interaction, roll: str, secret: bool = False, repeat: int = 1, compact: bool = False):
     """Roll dice and do math."""
-    response = f"Rolled `{roll}`:"
+    response = f"Rolled `{roll}`"
 
     if repeat < 1:
         repeat = 1
     elif repeat > 1:
         response += f" {repeat} times"
+
+    response += ": "
 
     try:
         roll_tree = parser.parse(roll)
@@ -98,8 +101,10 @@ async def roll(interaction: discord.Interaction, roll: str, secret: bool = False
             response += i
         response += "```"
     else:
-        for val, string in rolls:
-            response += f"\n{string} = **{val}**"
+        if compact:
+            response += ", ".join(f"**{val}**" for val, string in rolls)
+        else:
+            response += (f"\n{string} = **{val}**" for val, string in rolls)
 
     if len(response) > 2000:
         await interaction.response.send_message(f"Rolled `{roll}`\n**Error:** Output is too long to send on Discord", ephemeral=True)
