@@ -45,7 +45,6 @@ I am currently testing the bot with a small group of people, and will make an in
 
 ## Planned Additions
 (in no particular order)
-- Optional "compact" rolls shortened to one line
 - Count successes/failures, like World of Darkness
 - Reroll on nat 1 (or some other number)
 - Highest/lowest of multiple different expressions
