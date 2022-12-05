@@ -5,7 +5,7 @@ This is a Discord bot for rolling dice (such as in tabletop RPGs) and optionally
 ### Invite to your server:
 I am currently testing the bot with a small group of people, and will make an invite link publicly available when I've received enough feedback.
 ### Run locally:
-(Requires Python ≥ 3.10)
+(Requires Python ≥ 3.10. The `GUILD_MEMBERS` privileged intent is required for `/stats` to work properly.)
 1. Install from PyPI using `pip install requiembot`
 2. Set environment variable `TOKEN` to your Discord bot token
 3. Run `python -m requiembot`
@@ -16,6 +16,7 @@ I am currently testing the bot with a small group of people, and will make an in
 - `/roll`: Roll dice and/or do math, as described below. Options include:
   - `secret`: If set to "true", the result of your roll will only be visible to you.
   - `repeat`: Amount of times to roll the given input. Defaults to 1.
+- `/stats`: Display the number of Discord servers the bot is on, and the number of non-bot members across those servers.
 ### Example Dice Rolls
 - d20 ability check: `1d20 + 3` or simply `d20+3`
 - D&D 5E attribute: `4d6k3` or `4d6d1` (or simply `4d6d`)

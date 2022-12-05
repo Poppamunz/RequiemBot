@@ -36,6 +36,7 @@ if not (TOKEN := os.getenv("TOKEN")):
     exit()
 
 intents = discord.Intents.default()
+intents.members = True
 bot = commands.Bot(commands.when_mentioned, intents=intents)
 
 
@@ -104,6 +105,14 @@ async def roll(interaction: discord.Interaction, roll: str, secret: bool = False
         await interaction.response.send_message(f"Rolled `{roll}`\n**Error:** Output is too long to send on Discord", ephemeral=True)
     else:
         await interaction.response.send_message(response, ephemeral=secret)
+
+
+@bot.tree.command()
+async def stats(interaction: discord.Interaction):
+    """Display usage stats for this instance of RequiemBot."""
+    guilds = len(bot.guilds)
+    users = sum(not user.bot for user in bot.users)
+    await interaction.response.send_message(f"This bot is used in {guilds} servers by {users} users.")
 
 
 @bot.command()
