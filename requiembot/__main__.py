@@ -51,7 +51,7 @@ async def help(interaction: discord.Interaction):
     embed = discord.Embed(title="Help & Info", description="This bot can roll dice in tabletop RPGs. " +
                           "Included here are some common rolls for popular systems.\n\n" +
                           "For detailed info and source code, see GitHub:\n" +
-                          "https://github.com/michaelmunzer/RequiemBot\n")
+                          "https://github.com/Poppamunz/RequiemBot\n")
     embed.add_field(name="Roll", value="`d20+3`", inline=True)
     embed.add_field(name="5e Stat", value="`4d6k3`", inline=True)
     embed.add_field(name="Fudge/FATE", value="`4df`", inline=True)
