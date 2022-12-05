@@ -49,6 +49,7 @@ I am currently testing the bot with a small group of people, and will make an in
 - Reroll on nat 1 (or some other number)
 - Highest/lowest of multiple different expressions
 - Proper code comments/documentation
+- Unit tests
 
 ## Copyright Notice
 Copyright (C) 2022 Michael Munzer

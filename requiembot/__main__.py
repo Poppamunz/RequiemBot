@@ -104,7 +104,8 @@ async def roll(interaction: discord.Interaction, roll: str, secret: bool = False
         if compact:
             response += ", ".join(f"**{val}**" for val, string in rolls)
         else:
-            response += (f"\n{string} = **{val}**" for val, string in rolls)
+            for val, string in rolls:
+                response += f"\n{string} = **{val}**"
 
     if len(response) > 2000:
         await interaction.response.send_message(f"Rolled `{roll}`\n**Error:** Output is too long to send on Discord", ephemeral=True)
