@@ -1,5 +1,5 @@
 # Expression classes for the parser's use.
-# Copyright (C) 2022 Michael Munzer
+# Copyright (C) 2022–2023 Michael Munzer
 # This file is part of RequiemBot.
 #
 # RequiemBot is free software: you can redistribute it and/or modify

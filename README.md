@@ -54,7 +54,7 @@ I am currently testing the bot with a small group of people, and will make an in
 - Unit tests
 
 ## Copyright Notice
-Copyright (C) 2022 Michael Munzer
+Copyright (C) 2022–2023 Michael Munzer
 
 RequiemBot is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 

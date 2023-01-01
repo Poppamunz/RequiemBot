@@ -1,5 +1,5 @@
 # Main bot program to connect to Discord and handle commands.
-# Copyright (C) 2022 Michael Munzer
+# Copyright (C) 2022–2023 Michael Munzer
 # This file is part of RequiemBot.
 #
 # RequiemBot is free software: you can redistribute it and/or modify

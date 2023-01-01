@@ -1,5 +1,5 @@
 # Converts input expression strings into a list of tokens.
-# Copyright (C) 2022 Michael Munzer
+# Copyright (C) 2022–2023 Michael Munzer
 # This file is part of RequiemBot.
 #
 # RequiemBot is free software: you can redistribute it and/or modify
