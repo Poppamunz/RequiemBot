@@ -23,6 +23,8 @@ from discord import app_commands
 from discord.ext import commands
 from traceback import format_exception
 
+from random import choice
+
 from . import __version__, parser
 
 try:
@@ -119,6 +121,15 @@ async def stats(interaction: discord.Interaction):
     guilds = len(bot.guilds)
     users = sum(not user.bot for user in bot.users)
     await interaction.response.send_message(f"This bot is used in {guilds} servers by {users} users.")
+
+
+@bot.tree.command()
+@app_commands.describe(
+    secret="If set to True, the coin-flip and its result will only be visible to you. Default is False."
+)
+async def flip(interaction: discord.Interaction, secret: bool = False):
+    """Flip a coin."""
+    await interaction.response.send_message(choice(["Heads.", "Tails."]), ephemeral=secret)
 
 
 @bot.command()

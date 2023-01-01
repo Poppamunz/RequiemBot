@@ -17,6 +17,8 @@ I am currently testing the bot with a small group of people, and will make an in
   - `secret`: If set to "true", the result of your roll will only be visible to you.
   - `repeat`: Amount of times to roll the given input. Defaults to 1.
   - `compact`: If set to "true", the response will be shortened by removing the details of each roll.
+- `/flip`: Flip a coin. Outputs "Heads." or "Tails." Options include:
+  - `secret`: If set to "true", the result of your coin-flip will only be visible to you.
 - `/stats`: Display the number of Discord servers the bot is on, and the number of non-bot members across those servers.
 ### Example Dice Rolls
 - d20 ability check: `1d20 + 3` or simply `d20+3`
